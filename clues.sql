@@ -3,7 +3,10 @@
 -- so find the least populated country in Southern Europe, and we'll start looking for her there.
  
 -- Write SQL query here
+-- Look in the region within the country schema and order the population --
+SELECT * FROM country WHERE region='Southern Europe' ORDER BY population ASC;
 
+-- We see here that the Vatican City (VAT) has the lowest population in Southern Europe --
 
 -- Clue #2: Now that we're here, we have insight that Carmen was seen attending language classes in
 -- this country's officially recognized language. Check our databases and find out what language is
