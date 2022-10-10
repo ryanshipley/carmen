@@ -13,6 +13,11 @@ SELECT * FROM country WHERE region='Southern Europe' ORDER BY population ASC;
 -- spoken in this country, so we can call in a translator to work with you.
 
 -- Write SQL query here
+-- Access the countrylanguage schema and match the country code (VAT)--
+SELECT * FROM countrylanguage WHERE countrycode='VAT';
+
+--We are returned a result of 'Italian' the official language of the Vatican City--
+
 
 
 -- Clue #3: We have new news on the classes Carmen attended – our gumshoes tell us she's moved on
