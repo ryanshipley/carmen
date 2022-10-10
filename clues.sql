@@ -84,6 +84,12 @@ SELECT * FROM city WHERE id='211';
 --               So I'm off to add one to the population I find
 --               In a city of ninety-one thousand and now, eighty five.
 
-
+-- So Carmen is leaving town and she is trying to escape to a city wher the population is--
+--91085 once she moves there. Therefore the population is 91084 for the city we are--
+--looking for.--
 -- We're counting on you, gumshoe. Find out where she's headed, send us the info, and we'll be sure to meet her at the gates with bells on.
+--We will access the city schema and find the city with population 91084.--
+SELECT * FROM city WHERE population=91084;
 
+--The city with population 91084 is lovely Santa Monica, California. Carmen --
+--Is trying to get to the dock of Santa Monica.--
