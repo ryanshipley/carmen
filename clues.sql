@@ -5,6 +5,8 @@
 -- Write SQL query here
 -- Look in the region within the country schema and order the population --
 SELECT * FROM country WHERE region='Southern Europe' ORDER BY population ASC;
+--ORDER BY ASC because we want to go from the lowest to highest in order to find the--
+--country with the lowest population.--
 
 -- We see here that the Vatican City (VAT) has the lowest population in Southern Europe. We want to take the--
 -- three digit code as it is the only key that is within the other tables --
@@ -27,7 +29,7 @@ SELECT * FROM countrylanguage WHERE countrycode='VAT';
 -- Write SQL query here
 --We access the countrylanguage schema to match which country speaks only Italian.--
 SELECT * FROM countrylanguage WHERE language='Italian' ORDER BY percentage DESC;
---ORDER BY DESC because we are trying to order the percentage from decreasing to increasing.--
+--ORDER BY DESC because we are trying to order the percentage from highest to lowest to find highest percentage.--
 -- We see a country with a code of 'SMR' matches the 100% description.--
 
 -- Clue #4: We're booking the first flight out – maybe we've actually got a chance to catch her this time.
@@ -48,6 +50,13 @@ SELECT * FROM city WHERE countrycode='SMR';
 -- headed to, but doesn't end the same. Find out the city, and do another search for what country it's in. Hurry!
 
 -- Write SQL query here
+--We now have to find a city that has a similar name to Serravalle and get the name of the --
+--country that city is located. We will return the countries code (3).--
+SELECT * FROM city WHERE name like 'Serr%';
+--The most closeley related city is 'Serra'. The three digit code we get is 'BRA'. I wonder what country this is. We will--
+--now find the country with the matching code (3).--
+SELECT * FROM country WHERE code='BRA';
+--The code 'BRA' matches with the country Brzil.--
 
 
 -- Clue #6: We're close! Our South American agent says she just got a taxi at the airport, and is headed towards
