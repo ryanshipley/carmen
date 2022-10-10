@@ -36,7 +36,12 @@ SELECT * FROM countrylanguage WHERE language='Italian' ORDER BY percentage DESC;
 -- be flying to.
 
 -- Write SQL query here
+--We want to find the cities within the country SMR, but is not the same name as the country.--
+--We will access the city schema and match any cities with the countrycode SMR.--
+SELECT name FROM country WHERE code='SMR'; --To get the country name. San Marino--
+SELECT * FROM city WHERE countrycode='SMR';
 
+--We get two cities, Serravalle and San Marino. We know it cant be San Marino.--
 
 -- Clue #5: Oh no, she pulled a switch – there are two cities with very similar names, but in totally different
 -- parts of the globe! She's headed to South America as we speak; go find a city whose name is like the one we were
