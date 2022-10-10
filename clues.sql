@@ -6,7 +6,8 @@
 -- Look in the region within the country schema and order the population --
 SELECT * FROM country WHERE region='Southern Europe' ORDER BY population ASC;
 
--- We see here that the Vatican City (VAT) has the lowest population in Southern Europe --
+-- We see here that the Vatican City (VAT) has the lowest population in Southern Europe. We want to take the--
+-- three digit code as it is the only key that is within the other tables --
 
 -- Clue #2: Now that we're here, we have insight that Carmen was seen attending language classes in
 -- this country's officially recognized language. Check our databases and find out what language is
@@ -19,13 +20,15 @@ SELECT * FROM countrylanguage WHERE countrycode='VAT';
 --We are returned a result of 'Italian' the official language of the Vatican City--
 
 
-
 -- Clue #3: We have new news on the classes Carmen attended – our gumshoes tell us she's moved on
 -- to a different country, a country where people speak only the language she was learning. Find out which
 -- nearby country speaks nothing but that language.
 
 -- Write SQL query here
-
+--We access the countrylanguage schema to match which country speaks only Italian.--
+SELECT * FROM countrylanguage WHERE language='Italian' ORDER BY percentage DESC;
+--ORDER BY DESC because we are trying to order the percentage from decreasing to increasing.--
+-- We see a country with a code of 'SMR' matches the 100% description.--
 
 -- Clue #4: We're booking the first flight out – maybe we've actually got a chance to catch her this time.
 -- There are only two cities she could be flying to in the country. One is named the same as the country – that
