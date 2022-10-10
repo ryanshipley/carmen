@@ -64,6 +64,11 @@ SELECT * FROM country WHERE code='BRA';
 -- follow right behind you!
 
 -- Write SQL query here
+--We now want to get the capital of the country, which is given in an integer.--
+--Brazil's capital is 211. We want to match the capital city of the country.--
+--The only integer in the city value that is an integer is the id
+SELECT * FROM city WHERE id='211';
+--We get returned Brazil's capital of Brasilia.--
 
 
 -- Clue #7: She knows we're on to her – her taxi dropped her off at the international airport, and she beat us to
