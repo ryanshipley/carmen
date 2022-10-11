@@ -4,7 +4,9 @@
  
 -- Write SQL query here
 -- Look in the region within the country schema and order the population --
-SELECT * FROM country WHERE region='Southern Europe' ORDER BY population ASC;
+SELECT * FROM country 
+WHERE region='Southern Europe' 
+ORDER BY population ASC;
 --ORDER BY ASC because we want to go from the lowest to highest in order to find the--
 --country with the lowest population.--
 
@@ -17,7 +19,8 @@ SELECT * FROM country WHERE region='Southern Europe' ORDER BY population ASC;
 
 -- Write SQL query here
 -- Access the countrylanguage schema and match the country code (VAT)--
-SELECT * FROM countrylanguage WHERE countrycode='VAT';
+SELECT * FROM countrylanguage 
+WHERE countrycode='VAT';
 
 --We are returned a result of 'Italian' the official language of the Vatican City--
 
@@ -28,7 +31,9 @@ SELECT * FROM countrylanguage WHERE countrycode='VAT';
 
 -- Write SQL query here
 --We access the countrylanguage schema to match which country speaks only Italian.--
-SELECT * FROM countrylanguage WHERE language='Italian' ORDER BY percentage DESC;
+SELECT * FROM countrylanguage 
+WHERE language='Italian' 
+ORDER BY percentage DESC;
 --ORDER BY DESC because we are trying to order the percentage from highest to lowest to find highest percentage.--
 -- We see a country with a code of 'SMR' matches the 100% description.--
 
@@ -40,8 +45,10 @@ SELECT * FROM countrylanguage WHERE language='Italian' ORDER BY percentage DESC;
 -- Write SQL query here
 --We want to find the cities within the country SMR, but is not the same name as the country.--
 --We will access the city schema and match any cities with the countrycode SMR.--
-SELECT name FROM country WHERE code='SMR'; --To get the country name. San Marino--
-SELECT * FROM city WHERE countrycode='SMR';
+SELECT name FROM country 
+WHERE code='SMR'; --To get the country name. San Marino--
+SELECT * FROM city --To get the city names.--
+WHERE countrycode='SMR';
 
 --We get two cities, Serravalle and San Marino. We know it cant be San Marino.--
 
@@ -52,10 +59,12 @@ SELECT * FROM city WHERE countrycode='SMR';
 -- Write SQL query here
 --We now have to find a city that has a similar name to Serravalle and get the name of the --
 --country that city is located. We will return the countries code (3).--
-SELECT * FROM city WHERE name like 'Serr%';
+SELECT * FROM city 
+WHERE name like 'Serr%';
 --The most closeley related city is 'Serra'. The three digit code we get is 'BRA'. I wonder what country this is. We will--
 --now find the country with the matching code (3).--
-SELECT * FROM country WHERE code='BRA';
+SELECT * FROM country 
+WHERE code='BRA';
 --The code 'BRA' matches with the country Brzil.--
 
 
@@ -67,7 +76,8 @@ SELECT * FROM country WHERE code='BRA';
 --We now want to get the capital of the country, which is given in an integer.--
 --Brazil's capital is 211. We want to match the capital city of the country.--
 --The only integer in the city value that is an integer is the id
-SELECT * FROM city WHERE id='211';
+SELECT * FROM city 
+WHERE id='211';
 --We get returned Brazil's capital of Brasilia.--
 
 
@@ -89,7 +99,8 @@ SELECT * FROM city WHERE id='211';
 --looking for.--
 -- We're counting on you, gumshoe. Find out where she's headed, send us the info, and we'll be sure to meet her at the gates with bells on.
 --We will access the city schema and find the city with population 91084.--
-SELECT * FROM city WHERE population=91084;
+SELECT * FROM city 
+WHERE population=91084;
 
 --The city with population 91084 is lovely Santa Monica, California. Carmen --
 --Is trying to get to the dock of Santa Monica.--
